@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="asset/css/intro.css">
+    <title>Moises Alvarez</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="pagina-header">
+            <div class="logo">
+                <a href="#">Bienvenidos</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="#"  class="active" style="--navAni:1">Inicio</a></li>
+                <li><a href="#sobre-mi" style="--navAni:2" onclick= "smoothScroll(event)">Acerca de mi</a></li>
+                <li><a href="#" style="--navAni:3">Habilidades</a></li>
+                <li><a href="#" style="--navAni:4">Portfolio</a></li>
+                <li><a href="#" style="--navAni:5">Contacto</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkbtn">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+            <div class="social">
+                <a href="https://www.linkedin.com/in/moises-alvarez-ababa5266" target="_blank" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://api.whatsapp.com/message/WS5FNO7GHAAXC1?autoload=1&app_absent=0" target="_blank" style="--socialAni:2"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://github.com/sStarmd" target="_blank" style="--socialAni:4"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="detail">
+                <h1>Hola, soy <span>Moises</span></h1>
+                <h3>Anlista y desarrollador de software</h3>
+                <p>
+                    Mi misión es proporcionar soluciones tecnológicas innovadoras que superen tus expectativas y te brinden una experiencia excepcional.
+                </p>
+                <div class="btn">
+                    <button>Descargar CV</button>
+                </div>
+                
+            </div>
+            <div class="img-sec">
+                <div class="images">
+                    <img src="asset/img/mia.png" alt="" class="img-w">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre-mi" class="container">
+        <div class="main">
+            <div class="detail">
+                <h2>Acerca de mi</h2>
+                <p>Mi enfoque es siempre aprender y mejorar mis habilidades. Me apasiona la resolución de problemas y el trabajo en equipo para lograr objetivos comunes, especialmente en el desarrollo de software. Estoy buscando la oportunidad de crecer profesionalmente y aplicar mis habilidades para contribuir en proyectos desafiantes e innovadores.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script>
+                const darkbtn = document.getElementById('darkbtn');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkbtn.checked = true;
+        }
+
+        darkbtn.addEventListener('change', () => {
+            if (darkbtn.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+     <script>
+    //  para que cierre el menu cuando doy click en lu li nav en resposive cuando ocupa toda la pantalla 
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll("ul li a");
+        
+        links.forEach(function(link) {
+            link.addEventListener("click", function() {
+                const checkbox = document.getElementById("click");
+                checkbox.checked = false; // Desmarca el checkbox para cerrar el menú
+            });
+        });
+    });
+   
+</script>
+</body>
+
+</html>
